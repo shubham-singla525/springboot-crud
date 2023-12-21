@@ -21,7 +21,7 @@ public class CrudhibernateApplication {
 	public CommandLineRunner commandLineRunner(StudentDao studentDao){
 
 		return runner -> {
-			//createStudent(studentDao);
+//			createStudent(studentDao);
 
 //			retrieveStudent(studentDao);
 
@@ -29,8 +29,28 @@ public class CrudhibernateApplication {
 
 //			retrieveAllStudents(studentDao);
 
-			retrieveAllStudentsByLastName(studentDao);
+//			retrieveAllStudentsByLastName(studentDao);
+
+			updateStudentRow(studentDao);
 		};
+	}
+
+	private void updateStudentRow(StudentDao studentDao) {
+		// Retrieve student
+		int entryNumber = 1000;
+		System.out.println("Retrieving id 1");
+		Student student = studentDao.findById(entryNumber);
+
+		// Make first name to "Nikhil"
+		student.setFirst_name("Nikhil");
+
+		// update entry
+		System.out.println("Updated entry: ");
+		studentDao.updateStudent(student);
+
+		//Retrieve updated entry
+		System.out.println("Retreiving id 1 "+ studentDao.findById(entryNumber));
+
 	}
 
 	private void retrieveAllStudentsByLastName(StudentDao studentDao) {
