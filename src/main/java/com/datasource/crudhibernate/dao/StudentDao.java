@@ -11,4 +11,6 @@ public interface StudentDao {
     Student findById(Integer id);
 
     List<Student> findAll();
+
+    List<Student> findAllByLastName(String lastnameValue);
 }

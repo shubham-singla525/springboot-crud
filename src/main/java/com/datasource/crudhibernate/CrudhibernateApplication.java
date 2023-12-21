@@ -27,8 +27,18 @@ public class CrudhibernateApplication {
 
 //			createMultipleStudents(studentDao);
 
-			retrieveAllStudents(studentDao);
+//			retrieveAllStudents(studentDao);
+
+			retrieveAllStudentsByLastName(studentDao);
 		};
+	}
+
+	private void retrieveAllStudentsByLastName(StudentDao studentDao) {
+		List<Student> studentList = studentDao.findAllByLastName("Singla");
+
+		for(Student tempStudent : studentList){
+			System.out.println(tempStudent);
+		}
 	}
 
 	private void retrieveAllStudents(StudentDao studentDao) {
