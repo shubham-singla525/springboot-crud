@@ -31,8 +31,33 @@ public class CrudhibernateApplication {
 
 //			retrieveAllStudentsByLastName(studentDao);
 
-			updateStudentRow(studentDao);
+//			updateStudentRow(studentDao);
+
+//			deleteStudentObject(studentDao);
+
+			deleteAllStudent(studentDao);
 		};
+	}
+
+	private void deleteAllStudent(StudentDao studentDao) {
+
+		int numOfRowsUpdated = studentDao.deleteAllStudent();
+
+		System.out.println("Deleted row count: "+ numOfRowsUpdated );
+	}
+
+	private void deleteStudentObject(StudentDao studentDao) {
+		//retrieving student object
+		  Student tempStudent = studentDao.findById(1005);
+
+		//display student object
+		System.out.println(tempStudent);
+
+		//delete student object
+		studentDao.deleteStudent(1005);
+
+		//display student object
+		System.out.println(studentDao.findById(1005));
 	}
 
 	private void updateStudentRow(StudentDao studentDao) {
