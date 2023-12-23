@@ -25,7 +25,7 @@ public class CrudhibernateApplication {
 
 //			retrieveStudent(studentDao);
 
-//			createMultipleStudents(studentDao);
+			createMultipleStudents(studentDao);
 
 //			retrieveAllStudents(studentDao);
 
@@ -35,7 +35,7 @@ public class CrudhibernateApplication {
 
 //			deleteStudentObject(studentDao);
 
-			deleteAllStudent(studentDao);
+//			deleteAllStudent(studentDao);
 		};
 	}
 
